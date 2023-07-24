@@ -2198,6 +2198,8 @@ export class OdontogramaVInfantilComponent implements OnInit {
         let json = JSON.parse(this.odontograma.Diagrama);
         this.dientesArriba = json.dientesArriba;
         this.dientesAbajo = json.dientesAbajo;
+        this.dientesArriba1 = json.dientesArriba1;
+        this.dientesAbajo1 = json.dientesAbajo1;
       }
       let json: {} = {};
       json['dientesArriba'] = this.dientesArriba;
