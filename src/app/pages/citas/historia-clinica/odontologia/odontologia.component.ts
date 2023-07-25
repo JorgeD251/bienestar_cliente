@@ -33,10 +33,7 @@ pdfMake.vfs = pdfFonts.pdfMake.vfs;
   templateUrl: './odontologia.component.html',
   styleUrls: ['../historia-clinica.component.css']
 })
-@Component({
-  selector: 'app-calculadora-control-placa',
-  templateUrl: './Calculo-Placa.html',
-})
+
 export class OdontologiaComponent implements OnInit {
   crear: boolean = false;
   superAdmin: boolean = false;
@@ -669,6 +666,7 @@ export class OdontologiaComponent implements OnInit {
   }
 
   guardarHistoriaOdontologia() {
+    this.odontologiaForm.disable();
     let evolucionCorregida = JSON.stringify(this.evolucionOdontoArr.value);
     let evolucion = evolucionCorregida.slice(1, evolucionCorregida.length - 1);
     let evolucion2 = evolucion.replace(/]/g, "").replace(/\[/g, "");
@@ -1263,7 +1261,7 @@ export class OdontologiaComponent implements OnInit {
     }
   }
   cambiarHoja(data: any) {
-    this.evolucionOdontoArr.clear();
+    //this.evolucionOdontoArr.clear();
     this.getHojaEspecifica(data);
   }
   getHojaEspecifica(Id: any) {
@@ -1416,7 +1414,7 @@ export class OdontologiaComponent implements OnInit {
     this.crear = true;
     this.odontologiaForm.reset();
     this.estado = "nueva";
-    this.evolucionOdontoArr.clear();
+    //this.evolucionOdontoArr.clear();
     this.getInfoOdontologiaNuevaHoja();
     this.odontologiaForm.enable();
     this.hideHistory = true;
